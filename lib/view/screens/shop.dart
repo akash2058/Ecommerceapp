@@ -1,4 +1,6 @@
-import 'package:ecommerceapp/customwidgets/customappbar.dart';
+import 'package:ecommerceapp/customwidgets/Gategoriestab/kidscollection.dart';
+import 'package:ecommerceapp/customwidgets/Gategoriestab/mencollection.dart';
+import 'package:ecommerceapp/customwidgets/gategoriestab/womencollections.dart';
 import 'package:flutter/material.dart';
 
 class ShopView extends StatelessWidget {
@@ -6,11 +8,25 @@ class ShopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppbar(title: 'Shop'),
-      body: const Column(
-        children: [Image(image: AssetImage('assets/cart.png'))],
-      ),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text('Categories'),
+            bottom: const TabBar(tabs: [
+              Tab(
+                text: 'Men',
+              ),
+              Tab(
+                text: 'Womens',
+              ),
+              Tab(
+                text: 'Kids',
+              ),
+            ]),
+          ),
+          body: TabBarView(
+              children: [MensItemView(), WomenItemView(), KidsItemView()])),
     );
   }
 }

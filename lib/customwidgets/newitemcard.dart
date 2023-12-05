@@ -1,11 +1,9 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:ecommerceapp/provider/ecocontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SalesContainer extends StatelessWidget {
-  const SalesContainer({super.key});
+class NewCardView extends StatelessWidget {
+  const NewCardView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +18,13 @@ class SalesContainer extends StatelessWidget {
                       Container(
                         height: 150,
                         width: 120,
-                        decoration: BoxDecoration(color: Colors.green),
+                        decoration: BoxDecoration(color: Colors.yellow),
                         child: Column(
                           children: [
                             Container(
                               height: 100,
                               width: 120,
-                              decoration: BoxDecoration(color: Colors.orange),
+                              decoration: BoxDecoration(color: Colors.pink),
                               child: Stack(
                                 children: [
                                   Container(
