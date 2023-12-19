@@ -16,46 +16,48 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Consumer<Ecocontroller>(
       builder: (context, auth, child) {
-        return Scaffold(
-          body: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              children: [
-                TextFormField(
-                  onChanged: (query) {
-                    // Filter the doctors based on the search query
-                    setState(() {
-                      searchResult = auth.doctors
-                          .where((doctor) => doctor
-                              .toLowerCase()
-                              .contains(query.toLowerCase()))
-                          .toList();
-                    });
-                  },
-                  decoration: const InputDecoration(
-                    hintText: 'Search',
-                  ),
-                ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: searchResult.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        child: ListTile(
-                          leading: const Icon(Icons.person),
-                          trailing: IconButton(
-                              onPressed: () {
-                                auth.makePhoneCall(auth.phnumber[index]);
-                              },
-                              icon: const Icon(Icons.call)),
-                          subtitle: Text(auth.phnumber[index]),
-                          title: Text(searchResult[index]),
-                        ),
-                      );
+        return SafeArea(
+          child: Scaffold(
+            body: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  TextFormField(
+                    onChanged: (query) {
+                      // Filter the doctors based on the search query
+                      setState(() {
+                        searchResult = auth.doctors
+                            .where((doctor) => doctor
+                                .toLowerCase()
+                                .contains(query.toLowerCase()))
+                            .toList();
+                      });
                     },
+                    decoration: const InputDecoration(
+                      hintText: 'Search',
+                    ),
                   ),
-                )
-              ],
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: searchResult.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: ListTile(
+                            leading: const Icon(Icons.person),
+                            trailing: IconButton(
+                                onPressed: () {
+                                  auth.makePhoneCall(auth.phnumber[index]);
+                                },
+                                icon: const Icon(Icons.call)),
+                            subtitle: Text(auth.phnumber[index]),
+                            title: Text(searchResult[index]),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         );

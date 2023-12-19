@@ -1,5 +1,8 @@
 import 'package:ecommerceapp/provider/ecocontroller.dart';
 import 'package:ecommerceapp/utilities/icons.dart';
+import 'package:ecommerceapp/view/screens/birhospital.dart';
+import 'package:ecommerceapp/view/screens/manipaldes.dart';
+import 'package:ecommerceapp/view/screens/norvicdes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +16,7 @@ class TopContainer extends StatelessWidget {
         return Column(
           children: [
             ListTile(
-              leading: CircleAvatar(
+              leading: const CircleAvatar(
                 backgroundColor: Colors.orange,
               ),
               tileColor: Colors.blue,
@@ -125,7 +128,7 @@ class TopContainer extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Departments'),
@@ -141,8 +144,8 @@ class TopContainer extends StatelessWidget {
                 Container(
                   height: 60,
                   width: 150,
-                  decoration: BoxDecoration(color: Colors.orange),
-                  child: Column(
+                  decoration: const BoxDecoration(color: Colors.orange),
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('General Care'),
@@ -153,8 +156,8 @@ class TopContainer extends StatelessWidget {
                 Container(
                   height: 60,
                   width: 150,
-                  decoration: BoxDecoration(color: Colors.green),
-                  child: Column(
+                  decoration: const BoxDecoration(color: Colors.green),
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Predicators'),
@@ -165,8 +168,8 @@ class TopContainer extends StatelessWidget {
                 Container(
                   height: 60,
                   width: 150,
-                  decoration: BoxDecoration(color: Colors.pink),
-                  child: Column(
+                  decoration: const BoxDecoration(color: Colors.pink),
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Cardology Care'),
@@ -176,10 +179,10 @@ class TopContainer extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Top Hospitals'),
@@ -192,25 +195,66 @@ class TopContainer extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
-                  height: 60,
-                  width: 150,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(image: AssetImage(Appicons.bir))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => BirHospital()));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            fit: BoxFit.cover,
+                            image: AssetImage(Appicons.bir))),
+                    child: const Text(
+                      'Bir Teaching Hospital',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          color: Colors.blue),
+                    ),
+                  ),
                 ),
-                Container(
-                  height: 60,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      image:
-                          DecorationImage(image: AssetImage(Appicons.manipal))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ManipalDes()));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(Appicons.manipal))),
+                    child: const Text(
+                      'Manipal Teaching Hospital',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue),
+                    ),
+                  ),
                 ),
-                Container(
-                  height: 60,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      image:
-                          DecorationImage(image: AssetImage(Appicons.norvic))),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => NorvicDes()));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 150,
+                    decoration: const BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(Appicons.norvic))),
+                    child: const Text(
+                      'Norvic Teaching Hospital',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                          color: Colors.blue),
+                    ),
+                  ),
                 ),
               ],
             ),

@@ -12,24 +12,24 @@ class ProfileView extends StatelessWidget {
         return Scaffold(
           body: Center(
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 30,
                     backgroundColor: Colors.blue,
                     child: Icon(Icons.person),
                   ),
                   Text('Name:${get.user!.username}'),
                   Text('email:${get.user!.email}'),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
-                  Divider(),
-                  SizedBox(
+                  const Divider(),
+                  const SizedBox(
                     height: 10,
                   ),
-                  Card(
+                  const Card(
                     child: ListTile(
                       leading: Icon(
                         Icons.person,
@@ -39,10 +39,10 @@ class ProfileView extends StatelessWidget {
                       subtitle: Text('9824567898'),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Card(
+                  const Card(
                     child: ListTile(
                       leading: Icon(
                         Icons.person,
@@ -52,10 +52,10 @@ class ProfileView extends StatelessWidget {
                       subtitle: Text('Jadibuti'),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Card(
+                  const Card(
                     child: ListTile(
                       leading: Icon(
                         Icons.person,

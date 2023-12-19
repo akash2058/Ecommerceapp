@@ -88,7 +88,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       if (ecos.showcart)
                         Text(
-                          'Blood Bank',
+                          'Message',
                           style: TextStyle(
                               fontSize: 15,
                               color: ecos.currenttab == 1
@@ -117,7 +117,7 @@ class _DashboardState extends State<Dashboard> {
                               });
                             },
                             icon: Icon(
-                              CupertinoIcons.bell,
+                              Icons.medical_services_sharp,
                               color: ecos.currenttab == 2
                                   ? Color.fromARGB(255, 161, 17, 17)
                                   : Colors.black,
@@ -205,7 +205,7 @@ class _DashboardState extends State<Dashboard> {
                           style: TextStyle(
                               fontSize: 15,
                               color: ecos.currenttab == 4
-                                  ? Color.fromARGB(255, 161, 17, 17)
+                                  ? const Color.fromARGB(255, 161, 17, 17)
                                   : Colors.black),
                         )
                     ],

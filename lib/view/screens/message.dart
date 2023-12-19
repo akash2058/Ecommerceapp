@@ -10,28 +10,30 @@ class Messageview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<Ecocontroller>(
       builder: (context, value, child) {
-        return Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              children: List.generate(
-                  value.doctors.length,
-                  (index) => Card(
-                        child: ListTile(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => MessageDetails()));
-                          },
-                          subtitle: Text('You:Hi'),
-                          trailing: Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            size: 15,
+        return SafeArea(
+          child: Scaffold(
+            body: SingleChildScrollView(
+              child: Column(
+                children: List.generate(
+                    value.doctors.length,
+                    (index) => Card(
+                          child: ListTile(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MessageDetails()));
+                            },
+                            subtitle: Text('You:Hi'),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              size: 15,
+                            ),
+                            leading: Icon(Icons.person),
+                            title: Text(value.doctors[index]),
                           ),
-                          leading: Icon(Icons.person),
-                          title: Text(value.doctors[index]),
-                        ),
-                      )),
+                        )),
+              ),
             ),
           ),
         );
