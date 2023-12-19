@@ -1,3 +1,4 @@
+import 'package:ecommerceapp/customwidgets/Topcontainer.dart';
 import 'package:ecommerceapp/customwidgets/customappbar.dart';
 import 'package:ecommerceapp/customwidgets/customslider.dart';
 import 'package:ecommerceapp/customwidgets/itemcontainerforgrid.dart';
@@ -17,44 +18,45 @@ class HomeView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SliderPage(),
+              TopContainer(),
+              // SliderPage(),
               SizedBox(
                 height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'New',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
-                  )
-                ],
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Text(
+              //       'New',
+              //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              //     ),
+              //     Text(
+              //       'See all',
+              //       style: TextStyle(fontSize: 15, color: Colors.grey),
+              //     )
+              //   ],
+              // ),
               SizedBox(
                 height: 10,
               ),
-              NewCardView(),
+              // NewCardView(),
               SizedBox(
                 height: 15,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Top Sales',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
-                  )
-                ],
-              ),
-              SalesContainer(),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Text(
+              //       'Top Sales',
+              //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              //     ),
+              //     Text(
+              //       'See all',
+              //       style: TextStyle(fontSize: 15, color: Colors.grey),
+              //     )
+              //   ],
+              // ),
+              // SalesContainer(),
             ],
           ),
         ),

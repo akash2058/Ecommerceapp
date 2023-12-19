@@ -1,4 +1,5 @@
 import 'package:ecommerceapp/view/dashboard/dashboard.dart';
+import 'package:ecommerceapp/view/loginview.dart';
 import 'package:ecommerceapp/view/screens/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
         const Duration(seconds: 2)); // Set the duration you want
     // ignore: use_build_context_synchronously
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (context) => const Dashboard()),
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
     );
   }
 
@@ -35,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
               color: Colors.red,
             ),
             Text(
-              'Welcome to E-commerce App',
+              'Welcome to TeleCare',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ],

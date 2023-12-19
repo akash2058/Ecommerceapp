@@ -36,21 +36,23 @@ class _DashboardState extends State<Dashboard> {
                                       ecos.showhome = true;
                                       ecos.showcart = false;
                                       ecos.showfavourite = false;
+                                      ecos.message = false;
+                                      ecos.profile = false;
                                     });
                                   },
                                   icon: Icon(
                                     CupertinoIcons.home,
                                     color: ecos.currenttab == 0
-                                        ? Color.fromARGB(255, 161, 17, 17)
+                                        ? const Color.fromARGB(255, 161, 17, 17)
                                         : Colors.black,
                                   )))),
                       if (ecos.showhome)
                         Text(
-                          'Home',
+                          'Services',
                           style: TextStyle(
                               fontSize: 15,
                               color: ecos.currenttab == 0
-                                  ? Color.fromARGB(255, 161, 17, 17)
+                                  ? const Color.fromARGB(255, 161, 17, 17)
                                   : Colors.black),
                         )
                     ],
@@ -72,10 +74,12 @@ class _DashboardState extends State<Dashboard> {
                                   ecos.showhome = false;
                                   ecos.showcart = true;
                                   ecos.showfavourite = false;
+                                  ecos.message = false;
+                                  ecos.profile = false;
                                 });
                               },
                               icon: Icon(
-                                CupertinoIcons.cart,
+                                Icons.message,
                                 color: ecos.currenttab == 1
                                     ? Color.fromARGB(255, 161, 17, 17)
                                     : Colors.black,
@@ -84,7 +88,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       if (ecos.showcart)
                         Text(
-                          'Shop',
+                          'Blood Bank',
                           style: TextStyle(
                               fontSize: 15,
                               color: ecos.currenttab == 1
@@ -100,7 +104,7 @@ class _DashboardState extends State<Dashboard> {
                       Expanded(
                           child: AnimatedContainer(
                         height: ecos.showfavourite ? 30 : 25,
-                        duration: Duration(milliseconds: 500),
+                        duration: const Duration(milliseconds: 500),
                         child: IconButton(
                             onPressed: () {
                               setState(() {
@@ -108,10 +112,12 @@ class _DashboardState extends State<Dashboard> {
                                 ecos.showhome = false;
                                 ecos.showcart = false;
                                 ecos.showfavourite = true;
+                                ecos.message = false;
+                                ecos.profile = false;
                               });
                             },
                             icon: Icon(
-                              CupertinoIcons.heart_fill,
+                              CupertinoIcons.bell,
                               color: ecos.currenttab == 2
                                   ? Color.fromARGB(255, 161, 17, 17)
                                   : Colors.black,
@@ -119,10 +125,86 @@ class _DashboardState extends State<Dashboard> {
                       )),
                       if (ecos.showfavourite)
                         Text(
-                          'Favourites',
+                          'Doctors',
                           style: TextStyle(
                               fontSize: 15,
                               color: ecos.currenttab == 2
+                                  ? const Color.fromARGB(255, 161, 17, 17)
+                                  : Colors.black),
+                        )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                          child: AnimatedContainer(
+                              height: ecos.message ? 30 : 25,
+                              duration: const Duration(
+                                milliseconds: 500,
+                              ),
+                              child: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      ecos.currenttab = 3;
+                                      ecos.showhome = false;
+                                      ecos.showcart = false;
+                                      ecos.showfavourite = false;
+                                      ecos.message = true;
+                                      ecos.profile = false;
+                                    });
+                                  },
+                                  icon: Icon(
+                                    CupertinoIcons.settings,
+                                    color: ecos.currenttab == 3
+                                        ? const Color.fromARGB(255, 161, 17, 17)
+                                        : Colors.black,
+                                  )))),
+                      if (ecos.message)
+                        Text(
+                          'Settings',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: ecos.currenttab == 3
+                                  ? const Color.fromARGB(255, 161, 17, 17)
+                                  : Colors.black),
+                        )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      Expanded(
+                          child: AnimatedContainer(
+                              height: ecos.profile ? 30 : 25,
+                              duration: const Duration(
+                                milliseconds: 500,
+                              ),
+                              child: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      ecos.currenttab = 4;
+                                      ecos.showhome = false;
+                                      ecos.showcart = false;
+                                      ecos.showfavourite = false;
+                                      ecos.message = false;
+                                      ecos.profile = true;
+                                    });
+                                  },
+                                  icon: Icon(
+                                    CupertinoIcons.person,
+                                    color: ecos.currenttab == 4
+                                        ? Color.fromARGB(255, 161, 17, 17)
+                                        : Colors.black,
+                                  )))),
+                      if (ecos.profile)
+                        Text(
+                          'Profile',
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: ecos.currenttab == 4
                                   ? Color.fromARGB(255, 161, 17, 17)
                                   : Colors.black),
                         )
